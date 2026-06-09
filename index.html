@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="js.js"></script>
+</head>
+<body>
+  <main class="game-container">
+    <img src="img/Logotipo.png" alt="Logo Pokémon" class="logo">
+
+    <header class="top-bar">
+      <div class="info-box">Jogadas: <span id="moves">0</span></div>
+      <div class="info-box">Tempo: <span id="timer">0</span>s</div>
+      <button id="restartBtn">Reiniciar</button>
+    </header>
+
+    <section class="grid" id="grid"></section>
+
+    <p class="win-message" id="winMessage"></p>
+  </main>
+
+  <audio id="bgMusic" loop></audio>
+</body>
+</html>
