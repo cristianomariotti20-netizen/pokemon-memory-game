@@ -12,9 +12,10 @@ html {
 
 body {
   min-height: 100vh;
+  /* CORRIGIDO: Apontando para Arena.png.jpeg solta na raiz */
   background:
     linear-gradient(rgba(10, 25, 70, 0.72), rgba(10, 25, 70, 0.72)),
-    url("img/Arena.png") center/cover no-repeat;
+    url("Arena.png.jpeg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +132,8 @@ body {
 }
 
 .back {
-  background-image: url("img/pokebola fundo.png");
+  /* CORRIGIDO: Apontando para o nome exato da pasta e arquivo no seu GitHub */
+  background-image: url("Imagens/pokebola fundo.png.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,7 +161,6 @@ body {
 }
 
 @media (max-width: 520px) {
-
   .logo {
     width: 90%;
   }
@@ -186,7 +187,6 @@ body {
 }
 
 @media (max-width: 360px) {
-
   .grid {
     gap: 8px;
   }
