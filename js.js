@@ -5,18 +5,13 @@ const restartBtn = document.getElementById("restartBtn");
 const winMessage = document.getElementById("winMessage");
 const bgMusic = document.getElementById("bgMusic");
 
-// CAMINHOS CORRIGIDOS PARA APONTAR PARA A PASTA "Imagens/" E SUB-EXTENSÃO ".png.jpeg"
+// Lista ajustada com as imagens reais que estão na sua pasta "Imagens/" no GitHub
 const pokemons = [
-  { name: "charizard", img: "Imagens/charizard.png.jpeg" },
-  { name: "charmander", img: "Imagens/charmander.png.jpeg" }, // Verifique se este arquivo também termina assim
-  { name: "froakie", img: "Imagens/froakie.png.jpeg" },       // Verifique se este arquivo também termina assim
-  { name: "gecqua", img: "Imagens/gecqua.png.jpeg" },         // Verifique se este arquivo também termina assim
-  { name: "gengar", img: "Imagens/gengar.png.jpeg" },         // Verifique se este arquivo também termina assim
-  { name: "greninja", img: "Imagens/greninja.png.jpeg" },
-  { name: "piplup", img: "Imagens/piplup.png.jpeg" },
-  { name: "sceptile", img: "Imagens/sceptile.png.jpeg" },
   { name: "treecko", img: "Imagens/treecko.png.jpeg" },
-  { name: "zeraora", img: "Imagens/zeraora.png.jpeg" }        // Verifique se este arquivo também termina assim
+  { name: "sceptile", img: "Imagens/sceptile.png.jpeg" },
+  { name: "piplup", img: "Imagens/piplup.png.jpeg" },
+  { name: "greninja", img: "Imagens/greninja.png.jpeg" },
+  { name: "charizard", img: "Imagens/charizard.png.jpeg" }
 ];
 
 let firstCard = null;
@@ -49,7 +44,7 @@ function playMusic(src) {
   bgMusic.src = src;
   bgMusic.volume = 0.4;
   bgMusic.currentTime = 0;
-  bgMusic.play().catch(() => {});
+  bgMusic.play().catch((err) => console.log("Erro ao tocar música: ", err));
 }
 
 function createCard(pokemon) {
@@ -87,8 +82,9 @@ function loadGame() {
   });
 
   startTimer();
-  // CAMINHO DA MÚSICA REVISADO PARA "Musicas/" SEM ACENTO DE ACORDO COM SEU DIRETÓRIO LOCAL
-  playMusic("Musicas/pokemon-theme-song-original2.mp3");
+  
+  // Caminho exato da pasta e do arquivo de áudio do WhatsApp que está no seu GitHub
+  playMusic("Músicos/Áudio do WhatsApp 2026-06-09 às 00:24:36.mpeg");
 }
 
 function revealCard() {
@@ -122,7 +118,8 @@ function checkMatch() {
 
     if (matches === pokemons.length) {
       clearInterval(timerInterval);
-      playMusic("Musicas/pokemon-battle.mp3");
+      // Áudio secundário do WhatsApp para quando ganhar o jogo
+      playMusic("Músicos/Áudio do WhatsApp 2026-06-09 às 00:24:36 (1).mpeg");
       winMessage.textContent = `Parabéns! Você venceu em ${moves} jogadas e ${timer} segundos!`;
     }
   } else {
