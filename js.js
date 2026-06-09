@@ -5,17 +5,18 @@ const restartBtn = document.getElementById("restartBtn");
 const winMessage = document.getElementById("winMessage");
 const bgMusic = document.getElementById("bgMusic");
 
+// CAMINHOS CORRIGIDOS PARA APONTAR PARA A PASTA "Imagens/" E SUB-EXTENSÃO ".png.jpeg"
 const pokemons = [
-  { name: "charizard", img: "img/charizard.png" },
-  { name: "charmander", img: "img/charmander.png" },
-  { name: "froakie", img: "img/froakie.png" },
-  { name: "gecqua", img: "img/gecqua.png" },
-  { name: "gengar", img: "img/gengar.png" },
-  { name: "greninja", img: "img/greninja.png" },
-  { name: "piplup", img: "img/piplup.png" },
-  { name: "sceptile", img: "img/sceptile.png" },
-  { name: "treecko", img: "img/treecko.png" },
-  { name: "zeraora", img: "img/zeraora.png" }
+  { name: "charizard", img: "Imagens/charizard.png.jpeg" },
+  { name: "charmander", img: "Imagens/charmander.png.jpeg" }, // Verifique se este arquivo também termina assim
+  { name: "froakie", img: "Imagens/froakie.png.jpeg" },       // Verifique se este arquivo também termina assim
+  { name: "gecqua", img: "Imagens/gecqua.png.jpeg" },         // Verifique se este arquivo também termina assim
+  { name: "gengar", img: "Imagens/gengar.png.jpeg" },         // Verifique se este arquivo também termina assim
+  { name: "greninja", img: "Imagens/greninja.png.jpeg" },
+  { name: "piplup", img: "Imagens/piplup.png.jpeg" },
+  { name: "sceptile", img: "Imagens/sceptile.png.jpeg" },
+  { name: "treecko", img: "Imagens/treecko.png.jpeg" },
+  { name: "zeraora", img: "Imagens/zeraora.png.jpeg" }        // Verifique se este arquivo também termina assim
 ];
 
 let firstCard = null;
@@ -86,7 +87,8 @@ function loadGame() {
   });
 
   startTimer();
-  playMusic("Music/pokemon-theme-song-original2.mp3");
+  // CAMINHO DA MÚSICA REVISADO PARA "Musicas/" SEM ACENTO DE ACORDO COM SEU DIRETÓRIO LOCAL
+  playMusic("Musicas/pokemon-theme-song-original2.mp3");
 }
 
 function revealCard() {
@@ -120,7 +122,7 @@ function checkMatch() {
 
     if (matches === pokemons.length) {
       clearInterval(timerInterval);
-      playMusic("Music/pokemon-battle.mp3");
+      playMusic("Musicas/pokemon-battle.mp3");
       winMessage.textContent = `Parabéns! Você venceu em ${moves} jogadas e ${timer} segundos!`;
     }
   } else {
